@@ -14,7 +14,7 @@ struct ContentView: View {
             let isPortrait = geometry.size.height > geometry.size.width
             let topBarHeight = geometry.size.height * 0.1
             let listViewHeight = geometry.size.height * 0.9
-            if geometry.size.width < 700 || (geometry.size.width >= 700 && isPortrait) && !(UIDevice.current.userInterfaceIdiom == .pad)  {
+            if !(UIDevice.current.userInterfaceIdiom == .pad) {
                 VStack(spacing: 0) {
                     topBar
                         .frame(height: topBarHeight)
