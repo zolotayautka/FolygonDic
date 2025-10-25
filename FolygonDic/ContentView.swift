@@ -11,7 +11,6 @@ struct ContentView: View {
     @State private var showinitModal = false
     var body: some View {
         GeometryReader { geometry in
-            let isPortrait = geometry.size.height > geometry.size.width
             let topBarHeight = geometry.size.height * 0.1
             let listViewHeight = geometry.size.height * 0.9
             if !(UIDevice.current.userInterfaceIdiom == .pad) {
