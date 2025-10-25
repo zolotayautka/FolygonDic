@@ -206,7 +206,6 @@ struct ModalView: View {
                         .font(.system(size: 30))
                 } .padding().background(.ultraThinMaterial).clipShape(Circle()).shadow(radius: 3)
             }
-            Spacer(minLength: 1)
             .frame(height: 50)
             .alert("Are you sure you want to delete this?".localized, isPresented: $showAlert) {
                 Button("Ok".localized, role: .destructive) {
