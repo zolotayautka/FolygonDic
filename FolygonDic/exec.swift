@@ -291,11 +291,9 @@ func study_query(limit: Int8, orderByCount: Bool, exclude: [String]) -> [ktb] {
     var db: OpaquePointer? = nil
     if sqlite3_open(cPath, &db) != SQLITE_OK { return result }
     defer { sqlite3_close(db) }
-    sqlite3_exec(db, "SELECT random();", nil, nil, nil)
     let placeholders = exclude.map { _ in "?" }.joined(separator: ", ")
     let whereClause = exclude.isEmpty ? "" : "WHERE kotoba NOT IN (\(placeholders))"
-    let seed = Int(Date().timeIntervalSince1970 * 1000) % 1_000_000
-    let orderClause = orderByCount ? "ORDER BY count ASC, (RANDOM() % 10000 + \(seed))" : "ORDER BY (RANDOM() % 10000 + \(seed))"
+    let orderClause = orderByCount ? "ORDER BY count ASC, RANDOM()" : "ORDER BY RANDOM()"
     let sql = """
         SELECT kotoba, hinsi, imi, bikou, kanji, count
         FROM dic
