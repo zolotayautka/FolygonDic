@@ -9,72 +9,90 @@ struct ContentView: View {
     @State private var flag = false
     @State private var delete_flag = false
     @State private var showinitModal = false
+    @State private var isPortraitState: Bool? = nil
     var body: some View {
         GeometryReader { geometry in
+            let isPortrait = geometry.size.height > geometry.size.width
             let topBarHeight = geometry.size.height * 0.1
             let listViewHeight = geometry.size.height * 0.9
-            if !(UIDevice.current.userInterfaceIdiom == .pad) {
-                VStack(spacing: 0) {
-                    topBar
-                        .frame(height: topBarHeight)
-                    kotobaListView
-                        .frame(height: listViewHeight)
-                }
-                .sheet(item: $selectedItem) { item in
-                    ModalView(delf: $delete_flag, item: item)
-                }
-                .sheet(isPresented: $showingPieModal) {
-                    PieChartModal()
-                }
-                .sheet(isPresented: $showingAddModal, onDismiss: {
-                    if flag {
-                        search()
-                        flag = false
-                    }
-                }) {
-                    AddModalView(flag: $flag)
-                }
-                .onChange(of: delete_flag) { newValue in
-                    if newValue {
-                        search()
-                        selectedItem = nil
-                        delete_flag = false
-                    }
-                }
-            } else {
-                HStack(spacing: 0) {
+            Group {
+                if geometry.size.width < 700 || (geometry.size.width >= 700 && isPortrait) {
                     VStack(spacing: 0) {
                         topBar
                             .frame(height: topBarHeight)
                         kotobaListView
                             .frame(height: listViewHeight)
                     }
-                    .frame(width: geometry.size.width * 0.5)
-                    Divider()
-                    if let item = selectedItem {
-                        SideDetailView(delf: $delete_flag, selectedItem: $selectedItem, item: item)
-                            .frame(width: geometry.size.width * 0.5)
-                    } else {
-                        Color.clear
+                    .sheet(item: $selectedItem) { item in
+                        ModalView(delf: $delete_flag, item: item)
+                    }
+                    .sheet(isPresented: $showingPieModal) {
+                        PieChartModal()
+                    }
+                    .sheet(isPresented: $showingAddModal, onDismiss: {
+                        if flag {
+                            search()
+                            flag = false
+                        }
+                    }) {
+                        AddModalView(flag: $flag)
+                    }
+                    .onChange(of: delete_flag) { newValue in
+                        if newValue {
+                            search()
+                            selectedItem = nil
+                            delete_flag = false
+                        }
+                    }
+                } else {
+                    HStack(spacing: 0) {
+                        VStack(spacing: 0) {
+                            topBar
+                                .frame(height: topBarHeight)
+                            kotobaListView
+                                .frame(height: listViewHeight)
+                        }
+                        .frame(width: geometry.size.width * 0.5)
+                        Divider()
+                        if let item = selectedItem {
+                            SideDetailView(delf: $delete_flag, selectedItem: $selectedItem, item: item)
+                                .frame(width: geometry.size.width * 0.5)
+                        } else {
+                            Color.clear
+                        }
+                    }
+                    .sheet(isPresented: $showingPieModal) {
+                        PieChartModal()
+                    }
+                    .sheet(isPresented: $showingAddModal, onDismiss: {
+                        if flag {
+                            search()
+                            flag = false
+                        }
+                    }) {
+                        AddModalView(flag: $flag)
+                    }
+                    .onChange(of: delete_flag) { newValue in
+                        if newValue {
+                            search()
+                            delete_flag = false
+                        }
                     }
                 }
-                .sheet(isPresented: $showingPieModal) {
-                    PieChartModal()
+            }
+            .task {
+                if isPortraitState == nil {
+                    isPortraitState = isPortrait
                 }
-                .sheet(isPresented: $showingAddModal, onDismiss: {
-                    if flag {
+            }
+            .onChange(of: geometry.size) { _ in
+                let current = geometry.size.height > geometry.size.width
+                if let prev = isPortraitState {
+                    if prev == true && current == false {
                         search()
-                        flag = false
-                    }
-                }) {
-                    AddModalView(flag: $flag)
-                }
-                .onChange(of: delete_flag) { newValue in
-                    if newValue {
-                        search()
-                        delete_flag = false
                     }
                 }
+                isPortraitState = current
             }
         }
         .onAppear {
@@ -205,6 +223,7 @@ struct ModalView: View {
                         .font(.system(size: 30))
                 } .padding().background(.ultraThinMaterial).clipShape(Circle()).shadow(radius: 3)
             }
+            Spacer(minLength: 1)
             .frame(height: 50)
             .alert("Are you sure you want to delete this?".localized, isPresented: $showAlert) {
                 Button("Ok".localized, role: .destructive) {
