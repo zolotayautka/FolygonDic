@@ -295,7 +295,7 @@ func study_query(limit: Int8, orderByCount: Bool, exclude: [String]) -> [ktb] {
     let placeholders = exclude.map { _ in "?" }.joined(separator: ", ")
     let whereClause = exclude.isEmpty ? "" : "WHERE kotoba NOT IN (\(placeholders))"
     let seed = Int(Date().timeIntervalSince1970 * 1000) % 1_000_000
-    let orderClause = orderByCount ? "ORDER BY count ASC, (RANDOM() + \(seed)" : "ORDER BY (RANDOM() + \(seed))"
+    let orderClause = orderByCount ? "ORDER BY count ASC, (RANDOM() % 10000 + \(seed))" : "ORDER BY (RANDOM() % 10000 + \(seed))"
     let sql = """
         SELECT kotoba, hinsi, imi, bikou, kanji, count
         FROM dic
