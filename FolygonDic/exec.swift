@@ -5,7 +5,6 @@ import UserNotifications
 
 let fileManager = FileManager.default
 let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-let define_study = documentsURL?.appendingPathComponent(".define")
 var dbPath: String? = documentsURL?.appendingPathComponent("Dictionary").path
 
 func make_db() {
