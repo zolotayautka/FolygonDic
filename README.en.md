@@ -2,9 +2,6 @@
 
 **A vocabulary learning app where you can create and study your own word lists**
 
-<img width="250" alt="ip1" src="https://github.com/user-attachments/assets/f02ecc4f-1803-439a-bfaa-44bb17d531f7" />  <img width="250" alt="ip2" src="https://github.com/user-attachments/assets/4d898fb9-339e-4f07-b17d-08e48b6fbbbe" />  
-<img width="600" alt="ip3" src="https://github.com/user-attachments/assets/f36717c0-6ef0-4107-b6b2-b7e001ceb0f9" />
-
 ## Key Features
 
 ### 📝 Word Management
