@@ -53,4 +53,4 @@ https://apps.apple.com/jp/app/folygondic/id6754223204
 ---
 
 **Language / 言語 / 언어**  
-[한국어](README.ko.md) | [日本語](README.ja.md) | [English](README.en.md)  
+[한국어](README.ko.md) | [日本語](README.ja.md) | English
