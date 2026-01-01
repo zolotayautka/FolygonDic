@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imgs/icon.png</file>
+        <file>imgs/search.png</file>
+        <file>imgs/mp3.png</file>
+        <file>imgs/del.png</file>
+        <file>imgs/bookmarkadd.png</file>
+        <file>imgs/add.png</file>
+        <file>folygonkire_cpp_ko.qm</file>
+        <file>folygonkire_cpp_en.qm</file>
+        <file>folygonkire_cpp_ja.qm</file>
+        <file>imgs/modify.png</file>
+        <file>imgs/reset.png</file>
+        <file>imgs/yes.png</file>
+        <file>imgs/no.png</file>
+        <file>imgs/set.png</file>
+    </qresource>
+</RCC>
