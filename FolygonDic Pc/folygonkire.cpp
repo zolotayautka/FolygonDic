@@ -84,7 +84,7 @@ void play_tts(std::string kotoba){
         else if (qlang.startsWith("en")) winVoice = "Microsoft Zira Desktop";
         else if (qlang.startsWith("es")) winVoice = "Microsoft Helena Desktop";
         else if (qlang.startsWith("ru")) winVoice = "Microsoft Irina Desktop";
-        else if (qlang.startsWith("pt")) winVoice = "Microsoft Helia Desktop";
+        else if (qlang.startsWith("pt")) winVoice = "Microsoft Maria Desktop";
     }
     QString escapedText = text;
     escapedText.replace("\"", "\"\"");
