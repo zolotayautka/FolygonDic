@@ -67,10 +67,10 @@ void play_tts(std::string kotoba){
         if (qlang.startsWith("ja")) voice = "Kyoko";
         else if (qlang.startsWith("ko")) voice = "Yuna";
         else if (qlang.startsWith("zh")) voice = "Tingting";
-        else if (qlang.startsWith("en")) voice = "Samantha";
         else if (qlang.startsWith("ru")) voice = "Milena";
         else if (qlang.startsWith("es")) voice = "Paulina";
         else if (qlang.startsWith("pt")) voice = "Luciana";
+        else voice = "Samantha";
     }
     QStringList args;
     if (!voice.isEmpty()) args << "-v" << voice << text; else args << text;
@@ -81,10 +81,10 @@ void play_tts(std::string kotoba){
         if (qlang.startsWith("ja")) winVoice = "Microsoft Haruka Desktop";
         else if (qlang.startsWith("ko")) winVoice = "Microsoft Heami Desktop";
         else if (qlang.startsWith("zh")) winVoice = "Microsoft Huihui Desktop";
-        else if (qlang.startsWith("en")) winVoice = "Microsoft Zira Desktop";
         else if (qlang.startsWith("es")) winVoice = "Microsoft Helena Desktop";
         else if (qlang.startsWith("ru")) winVoice = "Microsoft Irina Desktop";
         else if (qlang.startsWith("pt")) winVoice = "Microsoft Maria Desktop";
+        else winVoice = "Microsoft Zira Desktop";
     }
     QString escapedText = text;
     escapedText.replace("\"", "\"\"");
@@ -110,7 +110,6 @@ void play_tts(std::string kotoba){
         if (qlang.startsWith("ja")) lang = "ja";
         else if (qlang.startsWith("ko")) lang = "ko";
         else if (qlang.startsWith("zh")) lang = "zh-CN";
-        else if (qlang.startsWith("en")) lang = "en";
         else if (qlang.startsWith("ru")) lang = "ru";
         else if (qlang.startsWith("es")) lang = "es";
         else if (qlang.startsWith("pt")) lang = "pt";
