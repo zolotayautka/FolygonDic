@@ -25,6 +25,9 @@
 - **Korean** (ko)
 - **Japanese** (ja)
 - **English** (en)
+- **Russian** (ru)
+- **Spanish** (es)
+- **Chinese** (zh)
 - Customized TTS voice support for each learning language
 
 ### 💾 Data Management
