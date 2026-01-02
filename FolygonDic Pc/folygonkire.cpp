@@ -60,63 +60,43 @@ int* count_kotoba(){
 void play_tts(std::string kotoba){
     QString text = QString::fromStdString(kotoba);
     QString qlang = QString::fromStdString(load_lang());
-    text.replace("'", "''");
-#if defined(Q_OS_MAC)
     QString voice;
-    if (!qlang.isEmpty()){
-        if (qlang.startsWith("ja")) voice = "Kyoko";
-        else if (qlang.startsWith("ko")) voice = "Yuna";
-        else if (qlang.startsWith("zh")) voice = "Tingting";
-        else if (qlang.startsWith("ru")) voice = "Milena";
-        else if (qlang.startsWith("es")) voice = "Paulina";
-        else if (qlang.startsWith("pt")) voice = "Luciana";
-        else voice = "Samantha";
-    }
+#if defined(Q_OS_MAC)
+    if (qlang.startsWith("ja")) voice = "Kyoko";
+    else if (qlang.startsWith("ko")) voice = "Yuna";
+    else if (qlang.startsWith("zh")) voice = "Tingting";
+    else if (qlang.startsWith("ru")) voice = "Milena";
+    else if (qlang.startsWith("es")) voice = "Paulina";
+    else if (qlang.startsWith("pt")) voice = "Luciana";
+    else voice = "Samantha";
     QStringList args;
-    if (!voice.isEmpty()) args << "-v" << voice << text; else args << text;
+    args << "-v" << voice << text;
     QProcess::startDetached("say", args);
 #elif defined(Q_OS_WIN)
-    QString winVoice;
-    if (!qlang.isEmpty()){
-        if (qlang.startsWith("ja")) winVoice = "Microsoft Haruka Desktop";
-        else if (qlang.startsWith("ko")) winVoice = "Microsoft Heami Desktop";
-        else if (qlang.startsWith("zh")) winVoice = "Microsoft Huihui Desktop";
-        else if (qlang.startsWith("es")) winVoice = "Microsoft Helena Desktop";
-        else if (qlang.startsWith("ru")) winVoice = "Microsoft Irina Desktop";
-        else if (qlang.startsWith("pt")) winVoice = "Microsoft Maria Desktop";
-        else winVoice = "Microsoft Zira Desktop";
-    }
-    QString escapedText = text;
-    escapedText.replace("\"", "\"\"");
+    if (qlang.startsWith("ja")) voice = "Microsoft Haruka Desktop";
+    else if (qlang.startsWith("ko")) voice = "Microsoft Heami Desktop";
+    else if (qlang.startsWith("zh")) voice = "Microsoft Huihui Desktop";
+    else if (qlang.startsWith("es")) voice = "Microsoft Helena Desktop";
+    else if (qlang.startsWith("ru")) voice = "Microsoft Irina Desktop";
+    else if (qlang.startsWith("pt")) voice = "Microsoft Maria Desktop";
+    else voice = "Microsoft Zira Desktop";
     QString psCommand;
-    if (!winVoice.isEmpty()){
-        psCommand = QString(
-            "Add-Type -AssemblyName System.Speech; "
-            "$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; "
-            "try { $speak.SelectVoice('%1') } catch { }; "
-            "$speak.Speak(\"%2\")"
-        ).arg(winVoice, escapedText);
-    } else {
-        psCommand = QString(
-            "Add-Type -AssemblyName System.Speech; "
-            "$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; "
-            "$speak.Speak(\"%1\")"
-        ).arg(escapedText);
-    }
+    psCommand = QString(
+        "Add-Type -AssemblyName System.Speech; "
+        "$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; "
+        "try { $speak.SelectVoice('%1') } catch { }; "
+        "$speak.Speak(\"%2\")"
+    ).arg(voice, text);
     QProcess::startDetached("powershell", QStringList() << "-Command" << psCommand);
 #else
-    QString lang;
-    if (!qlang.isEmpty()){
-        if (qlang.startsWith("ja")) lang = "ja";
-        else if (qlang.startsWith("ko")) lang = "ko";
-        else if (qlang.startsWith("zh")) lang = "zh-CN";
-        else if (qlang.startsWith("ru")) lang = "ru";
-        else if (qlang.startsWith("es")) lang = "es";
-        else if (qlang.startsWith("pt")) lang = "pt";
-        else lang = "en";
-    }
-    QString command = QString("gtts-cli \"%1\" -l %2 -o - | mpg123 -q -")
-        .arg(text, lang);
+    if (qlang.startsWith("ja")) voice = "ja";
+    else if (qlang.startsWith("ko")) voice = "ko";
+    else if (qlang.startsWith("zh")) voice = "zh-CN";
+    else if (qlang.startsWith("ru")) voice = "ru";
+    else if (qlang.startsWith("es")) voice = "es";
+    else if (qlang.startsWith("pt")) voice = "pt";
+    else voice = "en";
+    QString command = QString("gtts-cli \"%1\" -l %2 -o - | mpg123 -q -").arg(text, voice);
     QProcess::startDetached("sh", QStringList() << "-c" << command);
 #endif
 }
