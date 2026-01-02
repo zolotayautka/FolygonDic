@@ -1,4 +1,4 @@
-# <img src="https://github.com/zolotayautka/FolygonDic/blob/main/FolygonDic/Assets.xcassets/AppIcon.appiconset/icon.png" width="30"> FolygonDic
+# <img src="https://github.com/zolotayautka/FolygonDic/blob/main/FolygonDic Apple/FolygonDic/Assets.xcassets/AppIcon.appiconset/icon.png" width="30"> FolygonDic
 
 **자신만의 단어장을 만들어 학습하는 어휘 학습 앱 - Apple 플랫폼 및 데스크톱 지원**
 
