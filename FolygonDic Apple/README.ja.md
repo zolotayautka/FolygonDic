@@ -1,4 +1,4 @@
-# <img src="https://github.com/zolotayautka/FolygonDic/blob/main/FolygonDic/Assets.xcassets/AppIcon.appiconset/icon.png" width="30"> FolygonDic
+# <img src="https://github.com/zolotayautka/FolygonDic/blob/main/FolygonDic Apple/FolygonDic/Assets.xcassets/AppIcon.appiconset/icon.png" width="30"> FolygonDic
 
 **自ら言葉を記入して学習する単語帳アプリ**
 
