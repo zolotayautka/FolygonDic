@@ -70,9 +70,6 @@ Both versions share core functionality:
 - Korean (ko)
 - Japanese (ja)
 - English (en)
-- Russian (ru) - Apple version
-- Spanish (es) - Apple version
-- Chinese (zh) - Apple version
 - Language-specific TTS voices
 
 ### 💾 Data Management
