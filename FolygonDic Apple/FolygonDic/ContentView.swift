@@ -764,8 +764,8 @@ struct initModalView: View {
     @State private var gengo: String? = nil
     @State private var study_value: Int8 = 20
     @Binding var showModal: Bool
-    let items = ["Japanese".localized, "Korean".localized, "English".localized, "Russian".localized, "Chinese(Taiwan)".localized, "Chinese(Mainland)".localized, "Spanish(Spain)".localized, "Spanish(Mexico)".localized]
-    let lang: [String : String] = ["Japanese".localized : "ja-JP", "Korean".localized : "ko-KR", "English".localized : "en-US", "Russian".localized : "ru-RU", "Chinese(Taiwan)".localized : "zh-TW", "Chinese(Mainland)".localized : "zh-CN", "Spanish(Spain)".localized : "es-ES", "Spanish(Mexico)".localized : "es-MX"]
+    let items = ["Japanese".localized, "Korean".localized, "English".localized, "Russian".localized, "Chinese(Mainland)".localized, "Spanish(Spain)".localized]
+    let lang: [String : String] = ["Japanese".localized : "ja-JP", "Korean".localized : "ko-KR", "English".localized : "en-US", "Russian".localized : "ru-RU", "Chinese(Mainland)".localized : "zh-CN", "Spanish(Spain)".localized : "es-ES"]
     var body: some View {
         VStack {
             HStack {
