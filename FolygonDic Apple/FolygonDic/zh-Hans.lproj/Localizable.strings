@@ -34,8 +34,8 @@
 "Korean" = "韩语";
 "English" = "英语";
 "Russian" = "俄语";
-"Chinese(Mainland)" = "中文（大陆）";
-"Spanish(Spain)" = "西班牙语（西班牙）";
+"Chinese" = "中文";
+"Spanish" = "西班牙语";
 "Language" = "语言";
 "Apply" = "应用";
 "Words per Session :" = "每次学习单词数：";

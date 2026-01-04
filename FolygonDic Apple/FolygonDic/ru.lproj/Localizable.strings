@@ -34,8 +34,8 @@
 "Korean" = "Корейский";
 "English" = "Английский";
 "Russian" = "Русский";
-"Chinese(Mainland)" = "Китайский (Материк)";
-"Spanish(Spain)" = "Испанский (Испания)";
+"Chinese" = "Китайский";
+"Spanish" = "Испанский";
 "Language" = "Язык";
 "Apply" = "Применить";
 "Words per Session :" = "Слов за сеанс :";
