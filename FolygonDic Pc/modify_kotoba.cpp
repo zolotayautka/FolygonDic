@@ -6,7 +6,7 @@ modify_kotoba::modify_kotoba(tuple* t, bool* k, QWidget *parent)
     , ui(new Ui::modify_kotoba)
 {
     ui->setupUi(this);
-    setFixedSize(QSize(502, 372));
+    setFixedSize(QSize(502, 312));
     this->t = t;
     ui->kotoba_line->setText(QString::fromStdString(t->kotoba));
     QString hinsi;
