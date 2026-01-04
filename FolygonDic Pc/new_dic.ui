@@ -57,12 +57,7 @@
    </item>
    <item>
     <property name="text">
-     <string>en-us</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>en-uk</string>
+     <string>en-US</string>
     </property>
    </item>
    <item>
@@ -139,4 +134,5 @@
  </resources>
  <connections/>
 </ui>
+
 
