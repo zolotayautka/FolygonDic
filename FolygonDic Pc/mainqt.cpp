@@ -180,6 +180,8 @@ void mainQT::_add(){
     if (k){
         count_view();
         Pi();
+        ui->naiyou->setText("");
+        cname = "";
         sagasu();
     }
 }
@@ -194,7 +196,6 @@ void mainQT::_modify(){
     modify_ui->exec();
     delete modify_ui;
     if (k){
-        ui->sagasu_list->clear();
         ui->naiyou->setText("");
         cname = "";
         sagasu();
