@@ -237,7 +237,6 @@ void mainQT::Pi(){
     std::string d;
     std::string e;
     std::string f;
-
     if(!loc.compare("ja_JP")){
         if(koutyakugo_f)
             a = "助詞";
@@ -281,12 +280,10 @@ void mainQT::Pi(){
     s5->setBrush(Qt::lightGray);
     QPieSlice *s6 = hinsipi->append(QString::fromStdString(f), count[6]);
     s6->setBrush(Qt::gray);
-    
     if (pi == nullptr) {
         pi = new QChart();
     }
     pi->addSeries(hinsipi);
-    
     QPieSlice* slices[] = {s1, s2, s3, s4, s5, s6};
     for(int i = 0; i < 6; i++){
         if (count[0] > 0){
@@ -297,7 +294,6 @@ void mainQT::Pi(){
             slices[i]->setLabelVisible(false);
         }
     }
-    
     pi->legend()->setVisible(false);
     update_chart_view();
     QString tmp;
@@ -374,12 +370,10 @@ void mainQT::Pi2(){
     s2->setBrush(Qt::magenta);
     QPieSlice *s3 = hinsipi->append(QString::fromStdString(f), study_count[2]);
     s3->setBrush(Qt::cyan);
-    
     if (pi == nullptr) {
         pi = new QChart();
     }
     pi->addSeries(hinsipi);
-    
     QPieSlice* slices[] = {s1, s2, s3};
     for(int i = 0; i < 3; i++){
         if (count[0] > 0){
@@ -390,10 +384,8 @@ void mainQT::Pi2(){
             slices[i]->setLabelVisible(false);
         }
     }
-    
     pi->legend()->setVisible(false);
     update_chart_view();
-    
     QString tmp;
     ui->naiyou->setText("");
     if(!loc.compare("ja_JP")){
