@@ -77,22 +77,7 @@
    </item>
    <item>
     <property name="text">
-     <string>pt-PT</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>pt-BR</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
      <string>zh-CN</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>zh-TW</string>
     </property>
    </item>
   </widget>
@@ -154,3 +139,4 @@
  </resources>
  <connections/>
 </ui>
+
