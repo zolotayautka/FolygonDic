@@ -103,7 +103,7 @@ struct ContentView: View {
                 }
             }
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-                    if ib() != 0 {
+                    if has_setting() != 0 {
                         timer.invalidate()
                     } else {
                         showinitModal = true

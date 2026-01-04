@@ -225,7 +225,7 @@ func return_Study_Int8() -> Int8?{
     return Int8(t)
 }
 
-func ib() -> Int32 {
+func has_setting() -> Int32 {
     guard let cPath = dbPath?.cString(using: .utf8) else { return 0 }
     var db: OpaquePointer? = nil
     guard sqlite3_open(cPath, &db) == SQLITE_OK else { return 0 }
@@ -246,13 +246,7 @@ func setup(lang: String, kazu: Int8) {
     guard let cPath = dbPath?.cString(using: .utf8) else { return }
     var db: OpaquePointer? = nil
     guard sqlite3_open(cPath, &db) == SQLITE_OK else { return }
-    let count = ib()
-    let sql: String
-    if count > 0 {
-        sql = "UPDATE flag SET lang = ?, kazu = ?;"
-    } else {
-        sql = "INSERT INTO flag (lang, kazu) VALUES (?, ?);"
-    }
+    let sql: String = (has_setting() > 0) ? "UPDATE flag SET lang = ?, kazu = ?;" : "INSERT INTO flag (lang, kazu) VALUES (?, ?);"
     var stmt: OpaquePointer?
     if sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK {
         sqlite3_bind_text(stmt, 1, (lang as NSString).utf8String, -1, nil)
