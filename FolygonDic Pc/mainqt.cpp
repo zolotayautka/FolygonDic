@@ -222,10 +222,9 @@ void mainQT::_del(){
     }
     del_kotoba(list[n].kotoba);
     count_view();
-    ui->sagasu_list->clear();
-    ui->naiyou->setText("");
     cname = "";
     Pi();
+    ui->naiyou->setText("");
     sagasu();
 }
 
