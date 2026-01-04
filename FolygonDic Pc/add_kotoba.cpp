@@ -6,7 +6,7 @@ add_kotoba::add_kotoba(bool* k, QWidget *parent) :
     ui(new Ui::add_kotoba)
 {
     ui->setupUi(this);
-    setFixedSize(QSize(502, 362));
+    setFixedSize(QSize(502, 312));
     this->k = k;
     if(!(!load_lang().compare("ja-JP") || !load_lang().compare("ko-KR") || !load_lang().compare("zh-CN") || !load_lang().compare("zh-TW"))){
         ui->kanji_line->hide();
