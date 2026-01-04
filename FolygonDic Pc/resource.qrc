@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imgs/icon.png</file>
+        <file>imgs/search.png</file>
+        <file>imgs/mp3.png</file>
+        <file>imgs/del.png</file>
+        <file>imgs/bookmarkadd.png</file>
+        <file>imgs/add.png</file>
+        <file>imgs/modify.png</file>
+        <file>imgs/reset.png</file>
+        <file>imgs/yes.png</file>
+        <file>imgs/no.png</file>
+        <file>imgs/set.png</file>
+        <file>folygondic_en.qm</file>
+        <file>folygondic_ko.qm</file>
+        <file>folygondic_ja.qm</file>
+    </qresource>
+</RCC>
