@@ -67,7 +67,6 @@ void play_tts(std::string kotoba){
     else if (qlang.startsWith("zh")) voice = "Tingting";
     else if (qlang.startsWith("ru")) voice = "Milena";
     else if (qlang.startsWith("es")) voice = "Paulina";
-    else if (qlang.startsWith("pt")) voice = "Luciana";
     else voice = "Samantha";
     QStringList args;
     args << "-v" << voice << text;
@@ -78,26 +77,23 @@ void play_tts(std::string kotoba){
     else if (qlang.startsWith("zh")) voice = "Microsoft Huihui Desktop";
     else if (qlang.startsWith("es")) voice = "Microsoft Helena Desktop";
     else if (qlang.startsWith("ru")) voice = "Microsoft Irina Desktop";
-    else if (qlang.startsWith("pt")) voice = "Microsoft Maria Desktop";
     else voice = "Microsoft Zira Desktop";
-    QString psCommand;
-    psCommand = QString(
+    QString Command = QString(
         "Add-Type -AssemblyName System.Speech; "
         "$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; "
         "try { $speak.SelectVoice('%1') } catch { }; "
         "$speak.Speak(\"%2\")"
     ).arg(voice, text);
-    QProcess::startDetached("powershell", QStringList() << "-Command" << psCommand);
+    QProcess::startDetached("powershell", QStringList() << "-Command" << Command);
 #else
     if (qlang.startsWith("ja")) voice = "ja";
     else if (qlang.startsWith("ko")) voice = "ko";
-    else if (qlang.startsWith("zh")) voice = "zh-CN";
+    else if (qlang.startsWith("zh")) voice = "zh";
     else if (qlang.startsWith("ru")) voice = "ru";
     else if (qlang.startsWith("es")) voice = "es";
-    else if (qlang.startsWith("pt")) voice = "pt";
     else voice = "en";
-    QString command = QString("gtts-cli \"%1\" -l %2 -o - | mpg123 -q -").arg(text, voice);
-    QProcess::startDetached("sh", QStringList() << "-c" << command);
+    QString Command = QString("gtts-cli \"%1\" -l %2 -o - | mpg123 -q -").arg(text, voice);
+    QProcess::startDetached("sh", QStringList() << "-c" << Command);
 #endif
 }
 
