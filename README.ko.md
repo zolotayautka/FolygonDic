@@ -36,8 +36,10 @@ Qt 프레임워크로 구축된 크로스 플랫폼 데스크톱 애플리케이
 ### 주요 기능
 - **크로스 플랫폼**: Windows, macOS, Linux
 - **Qt 프레임워크**: 모든 플랫폼에서 네이티브 데스크톱 경험
-- **오프라인 우선**: 로컬에 저장되는 SQLite 데이터베이스
-- **다국어 TTS**: 플랫폼별 텍스트 음성 변환 지원
+- **오프라인 우선**: 로컴에 저장되는 SQLite 데이터베이스
+- **다국어 TTS**: 
+  - macOS/Windows: 플랫폼 네이티브 텍스트 음성 변환
+  - Linux: gTTS (Google Text-to-Speech) 라이브러리
 - **6가지 품사**: 조사/전치사, 명사, 동사, 형용사, 부사, 기타
 
 ### 기술 스택
@@ -113,8 +115,64 @@ Copyright (C) 2024 Shin Sukju
 #### 서드파티 구성 요소
 - **아이콘**: Feather Icons (MIT 라이선스) (https://feathericons.com/)
 - **SQLite**: 퍼블릭 도메인
+- **gTTS** (Linux전용): Google Text-to-Speech 라이브러리 (MIT 라이선스) (https://github.com/pndurette/gTTS)
 
 아이콘 라이선스 세부정보는 [FolygonDic Pc/imgs/lisence.txt](FolygonDic%20Pc/imgs/lisence.txt)를 참조하세요.
+
+##### Feather Icons 라이선스
+이 애플리케이션에서 사용된 아이콘은 **Feather Icons**에서 제공되며 **MIT 라이선스** 하에 라이선스됩니다:
+
+```
+Copyright (c) 2013-2023 Cole Bemis
+Copyright (c) 2013-2023 Feather Icons (https://feathericons.com/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+자세한 정보: https://feathericons.com/
+
+##### gTTS 라이선스 (Linux 전용)
+PC 버전은 Linux에서 텍스트 음성 변환 기능을 위해 **MIT 라이선스** 하에 라이선스된 **gTTS**를 사용합니다:
+
+```
+Copyright (c) 2014-2023 Pierre Nicolas Durette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+자세한 정보: https://github.com/pndurette/gTTS
 
 전체 라이선스 정보는 [FolygonDic Pc/README.ko.md](FolygonDic%20Pc/README.ko.md)에서 확인할 수 있습니다.
 

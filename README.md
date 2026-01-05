@@ -37,7 +37,9 @@ Cross-platform desktop application built with Qt framework.
 - **Cross-platform**: Windows, macOS, Linux
 - **Qt Framework**: Native desktop experience on all platforms
 - **Offline-first**: SQLite database stored locally
-- **Multi-language TTS**: Platform-specific text-to-speech support
+- **Multi-language TTS**: 
+  - macOS/Windows: Platform-specific native text-to-speech
+  - Linux: gTTS (Google Text-to-Speech) library
 - **6 Parts of Speech**: Particle/Preposition, noun, verb, adjective, adverb, and others
 
 ### Tech Stack
@@ -113,8 +115,64 @@ For more information: https://www.qt.io/licensing/
 #### Third-Party Components
 - **Icons**: Feather Icons (MIT License) (https://feathericons.com/)
 - **SQLite**: Public Domain
+- **gTTS** (Linux only): Google Text-to-Speech library (MIT License) (https://github.com/pndurette/gTTS)
 
 See [FolygonDic Pc/imgs/lisence.txt](FolygonDic%20Pc/imgs/lisence.txt) for icon license details.
+
+##### Feather Icons License
+The icons used in this application are from **Feather Icons**, licensed under the **MIT License**:
+
+```
+Copyright (c) 2013-2023 Cole Bemis
+Copyright (c) 2013-2023 Feather Icons (https://feathericons.com/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+For more information: https://feathericons.com/
+
+##### gTTS License (Linux only)
+The PC version uses **gTTS** on Linux for text-to-speech functionality, licensed under the **MIT License**:
+
+```
+Copyright (c) 2014-2023 Pierre Nicolas Durette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+For more information: https://github.com/pndurette/gTTS
 
 Full license information available in [FolygonDic Pc/README.md](FolygonDic%20Pc/README.md).
 

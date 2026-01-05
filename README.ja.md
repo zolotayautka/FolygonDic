@@ -37,7 +37,9 @@ Qtフレームワークで構築されたクロスプラットフォームデス
 - **クロスプラットフォーム**: Windows、macOS、Linux
 - **Qtフレームワーク**: 全プラットフォームでネイティブなデスクトップ体験
 - **オフライン優先**: ローカルに保存されるSQLiteデータベース
-- **多言語TTS**: プラットフォーム固有のテキスト読み上げサポート
+- **多言語TTS**: 
+  - macOS/Windows: プラットフォームネイティブのテキスト読み上げ
+  - Linux: gTTS (Google Text-to-Speech) ライブラリ
 - **6つの品詞**: 助詞/前置詞、名詞、動詞、形容詞、副詞、その他
 
 ### 技術スタック
@@ -113,8 +115,64 @@ Copyright (C) 2024 Shin Sukju
 #### サードパーティコンポーネント
 - **アイコン**: Feather Icons (MITライセンス) (https://feathericons.com/)
 - **SQLite**: パブリックドメイン
+- **gTTS** (Linux専用): Google Text-to-Speechライブラリ (MITライセンス) (https://github.com/pndurette/gTTS)
 
 アイコンライセンスの詳細は[FolygonDic Pc/imgs/lisence.txt](FolygonDic%20Pc/imgs/lisence.txt)をご覧ください。
+
+##### Feather Iconsライセンス
+本アプリケーションで使用されているアイコンは**Feather Icons**から提供されており、**MITライセンス**の下でライセンスされています:
+
+```
+Copyright (c) 2013-2023 Cole Bemis
+Copyright (c) 2013-2023 Feather Icons (https://feathericons.com/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+詳細情報: https://feathericons.com/
+
+##### gTTSライセンス (Linux専用)
+PC版はLinuxでテキスト読み上げ機能のために**MITライセンス**の下でライセンスされた**gTTS**を使用します:
+
+```
+Copyright (c) 2014-2023 Pierre Nicolas Durette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+詳細情報: https://github.com/pndurette/gTTS
 
 完全なライセンス情報は[FolygonDic Pc/README.ja.md](FolygonDic%20Pc/README.ja.md)で確認できます。
 
