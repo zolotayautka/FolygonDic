@@ -23,8 +23,8 @@ FolygonDic PCは、自分だけの単語帳を作成して学習できるデス�
 ### 🎯 学習機能
 - **音声再生(TTS)**: 
   - macOS: 言語別音声を使用したネイティブ`say`コマンド
-  - Windows: Microsoft音声を使用したSystem.Speech.Synthesis
-  - Linux: `espeak`または`festival` TTSエンジン
+  - Windows: Microsoft音声を使用したネイティブSystem.Speech.Synthesis
+  - Linux: 多言語サポートのためのgTTS (Google Text-to-Speech) ライブラリを使用
 - **学習回数追跡**: 各単語ごとの学習回数を自動的に記録
 - **学習モード**: 進捗追跡機能付きフラッシュカード形式の学習インターフェース
 - **学習統計**: Qt Chartsを使用して品詞別単語数を円グラフで可視化
@@ -130,20 +130,56 @@ Qtライセンスの詳細については、https://www.qt.io/licensing/ をご�
 Copyright (c) 2013-2023 Cole Bemis
 Copyright (c) 2013-2023 Feather Icons (https://feathericons.com/)
 
-以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）
-の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。
-これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、
-および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も
-無制限に含まれます。
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に
-記載するものとします。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 完全なアイコンライセンスの詳細については、[imgs/lisence.txt](imgs/lisence.txt)をご覧ください。
 
 #### SQLite
 本アプリケーションにはSQLite3 (sqlite3.c/h)が含まれており、**パブリックドメイン**です。
+
+#### gTTS (Google Text-to-Speech)
+Linuxでは、本アプリケーションはテキスト読み上げ機能のために**MITライセンス**の下でライセンスされた**gTTS**を使用します:
+
+```
+Copyright (c) 2014-2023 Pierre Nicolas Durette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+詳細情報: https://github.com/pndurette/gTTS
 
 ## 作者
 

@@ -23,8 +23,8 @@ FolygonDic PC는 자신만의 단어장을 만들어 학습할 수 있는 데스
 ### 🎯 학습 기능
 - **음성 재생(TTS)**: 
   - macOS: 언어별 음성을 사용한 네이티브 `say` 명령
-  - Windows: Microsoft 음성을 사용한 System.Speech.Synthesis
-  - Linux: `espeak` 또는 `festival` TTS 엔진
+  - Windows: Microsoft 음성을 사용한 네이티브 System.Speech.Synthesis
+  - Linux: 다국어 지원을 위한 gTTS (Google Text-to-Speech) 라이브러리 사용
 - **학습 횟수 추적**: 각 단어별 학습 횟수를 자동으로 기록
 - **학습 모드**: 진행 상황 추적 기능이 있는 플래시카드 스타일 학습 인터페이스
 - **학습 통계**: Qt Charts를 사용하여 품사별 단어 수를 파이 차트로 시각화
@@ -130,20 +130,56 @@ Qt 라이선스에 대한 자세한 내용은 https://www.qt.io/licensing/ 을 �
 Copyright (c) 2013-2023 Cole Bemis
 Copyright (c) 2013-2023 Feather Icons (https://feathericons.com/)
 
-이 소프트웨어 및 관련 문서 파일(이하 "소프트웨어")의 사본을 취득하는 모든 사람에게
-소프트웨어를 무제한으로 취급할 수 있는 권한을 무료로 부여합니다. 여기에는 소프트웨어의
-사본을 사용, 복사, 수정, 병합, 게시, 배포, 재라이선스 및/또는 판매할 수 있는 권리와
-소프트웨어를 제공받은 사람에게 동일한 권리를 허용할 수 있는 권리가 포함되며
-제한 없이 포함됩니다.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-위의 저작권 표시 및 이 허가 표시는 소프트웨어의 모든 사본 또는 중요한 부분에
-포함되어야 합니다.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 전체 아이콘 라이선스 세부정보는 [imgs/lisence.txt](imgs/lisence.txt)를 참조하십시오.
 
 #### SQLite
 이 애플리케이션에는 SQLite3 (sqlite3.c/h)가 포함되어 있으며, **퍼블릭 도메인**입니다.
+
+#### gTTS (Google Text-to-Speech)
+Linux에서 이 애플리케이션은 텍스트 음성 변환 기능을 위해 **MIT 라이선스** 하에 라이선스된 **gTTS**를 사용합니다:
+
+```
+Copyright (c) 2014-2023 Pierre Nicolas Durette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+자세한 정보: https://github.com/pndurette/gTTS
 
 ## 작성자
 
