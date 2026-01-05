@@ -27,8 +27,6 @@ struct tuple {
 
 std::vector<tuple> search(std::string kotoba);
 int* count_kotoba();
-std::vector<unsigned char> mp3_load(std::string kotoba);
-bool add_kotoba_(tuple add_dic, std::vector<unsigned char> mp3);
 bool add_kotoba_(tuple add_dic);
 void modify_kotoba_(tuple t);
 void del_kotoba(std::string kotoba);
