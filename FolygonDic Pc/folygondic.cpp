@@ -68,9 +68,7 @@ void play_tts(std::string kotoba){
     else if (qlang.startsWith("ru")) voice = "Milena";
     else if (qlang.startsWith("es")) voice = "Paulina";
     else voice = "Samantha";
-    QStringList args;
-    args << "-v" << voice << text;
-    QProcess::startDetached("say", args);
+    QProcess::startDetached("say", QStringList() << "-v" << voice << text);
 #elif defined(Q_OS_WIN)
     if (qlang.startsWith("ja")) voice = "Microsoft Haruka Desktop";
     else if (qlang.startsWith("ko")) voice = "Microsoft Heami Desktop";
