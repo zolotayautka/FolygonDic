@@ -1,5 +1,5 @@
-#ifndef FOLYGONKIRE_H
-#define FOLYGONKIRE_H
+#ifndef FOLYGONDIC_H
+#define FOLYGONDIC_H
 
 #include <iostream>
 #include <vector>
@@ -39,4 +39,4 @@ void update_count(tuple up);
 bool koutyakugo();
 std::string load_lang();
 
-#endif // FOLYGONKIRE_H
+#endif // FOLYGONDIC_H
